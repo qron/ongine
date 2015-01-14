@@ -20,8 +20,6 @@ Summary
 If
 --
 
-### Usage
-
 The `if` node allows to conditionally add nodes to template.
 
 The `in` property at node root contains either a conditions list,
@@ -44,17 +42,15 @@ which will be rendered only if their `condition` property returns true,
 or if they have a defined `default` property
 and all previous conditions have returned false.
 
-```json
-{"api" : "if", "in" : <conditions>}
-```
+### Usage
+
+{"api" : "if", "in" : __conditions__}
 
 * conditions : Array | Object
 
-#### `<conditions>` structure
+#### __conditions__ structure
 
-```json
-([){("condition" : <condition> | "default" : <enable>), "in" : <block>}(,...])
-```
+([){("condition" : __condition__ | "default" : __enable__), "in" : __block__}(,...])
 
 * condition : String
 * enable : Boolean
@@ -116,18 +112,14 @@ and all previous cases have returned false.
 
 ### Usage
 
-```json
-{"api" : "switch", "expression" : <expression>, "in" : <cases>}
-```
+{"api" : "switch", "expression" : __expression__, "in" : __cases__}
 
 * expression : String
 * cases : Array | Object
 
-#### `<cases>` structure
+#### __cases__ structure
 
-```json
-([){("case" : <case> | "default" : <enable>), "in" : <block>}(,...])
-```
+([){("case" : __case__ | "default" : __enable__), "in" : __block__}(,...])
 
 * case : String | Number | Boolean
 * enable : Boolean
@@ -176,9 +168,7 @@ Its default value is `"item"`.
 
 ### Usage
 
-```json
-{"api" : "each", "array" : <property>, "in" : <block>(, "item" : <item>)}
-```
+{"api" : "each", "array" : __property__, "in" : __block__(, "item" : __item__)}
 
 * property : String
 * item : String 
@@ -209,9 +199,7 @@ Useful only in few situations.
 
 ### Usage
 
-```json
-{"api" : "repeat", "number" : <number>, "in" : <block>(, "current" : <current>)}
-```
+{"api" : "repeat", "number" : __number__, "in" : __block__(, "current" : __current__)}
 
 * number : Number
 * current : String
@@ -242,9 +230,7 @@ unless this behaviour have been disabled setting custom options.
 
 ### Usage
 
-```json
-{"api" : "inlay", "name" : <filename>}
-```
+{"api" : "inlay", "name" : __filename__}
 
 * filename : String
 
@@ -268,9 +254,7 @@ It should be used only in warp templates and can be used only once.
 
 ### Usage
 
-```json
 {"api" : "wrap"}
-```
 
 ### Example
 

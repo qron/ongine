@@ -17,9 +17,7 @@ Features
 Usage
 -----
 
-```javascript
-ongine(<view>, <fillers>, <options>)
-```
+ongine(__view__, __fillers__, __options__);
 
 * view : Object | Array | String
 * fillers : Object

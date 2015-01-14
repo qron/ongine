@@ -35,7 +35,7 @@ Doctype
 
 Define document doctype.
 
-* Usage : `{'doctype' : <doctype>}`
+* Usage : {'doctype' : __doctype__}
 	* doctype : String
 * Default : `'<!DOCTYPE HTML>'`
 
@@ -59,7 +59,7 @@ filler name will be embedded between the first item and the second one
 
 > `{{myFiller}}` *will be interpreted as* `fillers.myFiller`
 
-* Usage : `{'alias' : <alias>}`
+* Usage : {'alias' : __alias__}
 	* alias : String | Array
 * Default : `['{{', '}}']`
 
@@ -74,7 +74,7 @@ To use templates without extension,
 assign a falsy value to `options.extension`,
 in order to verify condition : `(!options.extension) === true`.
 
-* Usage : `{'extension' : <extension>}`
+* Usage : {'extension' : __extension__}
 	* extension : String | Falsy value
 * Default : `json`
 
@@ -83,7 +83,7 @@ Views
 
 Define the views directory path of application.
 
-* Usage : `{'views' : <path>}`
+* Usage : {'views' : __path__}
 	* path : String
 * Default : `views`
 
@@ -95,9 +95,9 @@ Define the inlays directory path of application.
 If it is not defined, the directory location
 will be considered to be under views directory.
 
-* Usage : `{'inlays' : <path>}`
+* Usage : {'inlays' : __path__}
 	* path : String
-* Default : `<views>/inlays`
+* Default : `options.views + '/inlays'`
 
 Wraps
 -----
@@ -107,16 +107,16 @@ Define the wraps directory path of application.
 If it is not defined, the directory location
 will be considered to be under views directory.
 
-* Usage : `{'wraps' : <path>}`
+* Usage : {'wraps' : __path__}
 	* path : String
-* Default : `<views>/wraps`
+* Default : `options.views + '/wraps'`
 
 Default wrap
 ------------
 
 Define the default wrap filename if options.wrap is omitted.
 
-* Usage : `{'defaultWrap' : <filename>}`
+* Usage : {'defaultWrap' : __filename__}
 	* filename : String
 * Default : `'default'`
 
@@ -128,7 +128,7 @@ Define the wrap filename which will enwrap the rendered template.
 To disable wrapping, assign `false` to `options.wrap`,
 in order to verify condition : `options.wrap === false`
 
-* Usage : `{'wrap' : <filename>}`
+* Usage : {'wrap' : __filename__}
 	* filename : String
 * Default : none
 
@@ -142,7 +142,7 @@ Raw text will not be broken down, it will be indented as a single line.
 
 Somewhat buggy in browser when inspecting the source code.
 
-* Usage : `{'pretty' : <enable>}`
+* Usage : {'pretty' : __enable__}
 	* enable : Boolean
 * Default : `false`
 
@@ -151,7 +151,7 @@ Indentation
 
 Define indentation pattern when pretty mode is enabled.
 
-* Usage : `{indentation : <pattern>}`
+* Usage : {indentation : __pattern__}
 	* pattern : String
 * Default : `'\t'`
 
@@ -160,7 +160,7 @@ Out
 
 Define the engine return type.
 
-* Usage : `{'out' : <mode>}`
+* Usage : {'out' : __mode__}
 	* mode : String
 * String mode : the engine will return a string.
 * Buffer mode : the engine will return a buffer.
