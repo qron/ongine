@@ -29,10 +29,17 @@ ongine(<view>, <fillers>, <options>)
 
 ```javascript
 var render = require('ongine');
-render(
-	{'tag' : 'p', 'attributes' : {'id' : 'hello'}, 'in' : 'Hello World'},
+var html = render(
+	{
+		'tag' : 'p',
+		'attributes' : {'id' : 'hello'},
+		'in' : 'Hello World'
+	},
 	null,
-	{'warp : false', 'doctype' : false}
+	{
+		'warp' : false,
+		'doctype' : false
+	}
 );
 ```
 
@@ -47,22 +54,31 @@ render(
 ```javascript
 var render = require('ongine');
 
-var view = {'tag' : 'html', 'in' : [
-	{'tag' : 'head', 'in' : {'tag' : 'title', in : '{{title}}'}},
-	{'tag' : 'body', 'in' : {'tag' : 'p', in : '{{message}}'}},
-]};
+var view = {
+	'tag' : 'html',
+	'in' : [
+		{
+			'tag' : 'head',
+			'in' : {'tag' : 'title', 'in' : '{{title}}'}
+		},
+		{
+			'tag' : 'body',
+			'in' : {'tag' : 'p', 'in' : '{{message}}'}
+		}
+	]
+};
 
 var fillers = {
-	title : 'Home',
-	message : 'Welcome to homepage.'
+	'title' : 'Home',
+	'message' : 'Welcome to homepage.'
 };
 
 var options = {
-	wraps : false,
-	pretty : true
+	'wraps' : false,
+	'pretty' : true
 }
 
-render(view, fillers, options);
+var html = render(view, fillers, options);
 ```
 
 #### Rendered
