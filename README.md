@@ -12,7 +12,7 @@ Features
 * Conditions, iterations and inclusions through API
 * Multi outputs : string, buffer, stream
 * Pretty human-readable output options
-* Molds filling system
+* Mold filling system
 
 Usage
 -----
@@ -39,7 +39,7 @@ render(
 #### Rendered
 
 ```html
-<p>Hello World</p>
+<p id="hello">Hello World</p>
 ```
 
 ### Basic HTML5 page
@@ -48,8 +48,8 @@ render(
 var render = require('ongine');
 
 var view = {'tag' : 'html', 'in' : [
-		{'tag' : 'head', 'in' : {'tag' : 'title', in : '{{title}}'}},
-		{'tag' : 'body', 'in' : {'tag' : 'p', in : '{{message}}'}},
+	{'tag' : 'head', 'in' : {'tag' : 'title', in : '{{title}}'}},
+	{'tag' : 'body', 'in' : {'tag' : 'p', in : '{{message}}'}},
 ]};
 
 var fillers = {
