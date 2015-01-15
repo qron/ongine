@@ -14,6 +14,13 @@ Features
 * Pretty human-readable output options
 * Mold filling system
 
+Installation
+------------
+
+```
+npm install ongine
+```
+
 Usage
 -----
 
