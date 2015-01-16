@@ -40,7 +40,8 @@ function renderTemplate(template, fillers, options) {
 
 	}
 
-	if(!options.doctype) html = html.substr(1);
+	// Delete first EOL when pretty is enabled and doctype is disabled
+	if(options.pretty && !options.doctype) html = html.substr(1);
 
 	if(options.out === 'buffer') return new Buffer(html);
 	if(options.out === 'stream') {
