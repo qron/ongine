@@ -190,6 +190,7 @@ Repeat
 
 The `repeat` node litteraly clone the child/raw nodes of the `in` property
 a number of time specified by the `number` property.
+This last property can be either a number, or a mold referring to a number.
 
 The optional `current` property defines the property name which will be set
 in fillers during iteration to store the repetition number.

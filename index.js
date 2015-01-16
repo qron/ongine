@@ -122,6 +122,11 @@ function inspectApi(node, fillers, options) {
 		case 'repeat' :
 			var html = '';
 			if(!node.current) node.current = 'current';
+			if(node.number.constructor === String) {
+				node.number = handleRaw(node.number, fillers, {
+					'alias' : options.alias
+				});
+			}
 			for(var i = 1, e = node.number; i <= e; i++) {
 				fillers[node.current] = i;
 				html += inspectNodeTree(node, fillers, options);
