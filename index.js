@@ -97,9 +97,10 @@ function inspectApi(node, fillers, options) {
 				if(node.in[i].default) {
 					return inspectNodeTree(node.in[i], fillers, options);
 				}
-				var value = eval(expression);
-				var filled = handleRaw(node.in[i].case, fillers, {'alias' : options.alias});
-				if(value === filled) {
+				var expressionValue = eval(expression);
+				var caseValue = node.in[i].case;
+				if(caseValue === String) handleRaw(caseValue, fillers, {'alias' : options.alias});
+				if(expressionValue === caseValue) {
 					return inspectNodeTree(node.in[i], fillers, options);
 				}
 			}
