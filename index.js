@@ -17,8 +17,8 @@ function renderTemplate(template, fillers, options) {
 
 	if(options.doctype) html += options.doctype;
 
-	var isPath = template.constructor === String || template.constructor === Number;
-	if(isPath) template = getTemplate(template.toString(), 'views', options);
+	// Consider raws as template filename
+	if(isRaw) template = getTemplate(template.toString(), 'views', options);
 
 	if(areChildren) template = {'in' : template};
 
