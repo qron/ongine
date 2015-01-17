@@ -1,4 +1,4 @@
-ongine
+Ongine
 ======
 
 JSON-based template engine.
@@ -13,6 +13,19 @@ Features
 * Multi outputs : string, buffer, stream
 * Pretty human-readable output options
 * Mold filling system
+
+Caution
+-------
+
+Ongine is currently an experimental module. Please, use it as such.
+
+This engine is intended to be server-side only.
+
+The conditional nodes of the API are parsed with an unsafe `eval()`.
+Therefore, **never render templates sent by clients**.
+This evil will be banned in future releases.
+
+The API syntax will evolve in the short-term, however its usage will last.
 
 Installation
 ------------
