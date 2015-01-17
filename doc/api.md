@@ -13,7 +13,7 @@ Summary
 * [Each](#each)
 * [Repeat](#repeat)
 * [Inlay](#inlay)
-* [Warp](#warp)
+* [Wrap](#wrap)
 
 * * *
 
@@ -244,14 +244,14 @@ unless this behaviour have been disabled setting custom options.
 }
 ```
 
-Warp
+Wrap
 ----
 
 The `wrap` node is only an indicator which locates
-where the wrapped template will be inserted in the warp template
+where the wrapped template will be inserted in the wrap template
 defined in options.
 
-It should be used only in warp templates and can be used only once.
+It should be used only in wrap templates and can be used only once.
 
 ### Usage
 
