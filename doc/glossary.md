@@ -4,28 +4,32 @@ Glossary
 Node
 ----
 
-An object which can be a tag node, an API node, or a raw node.
+Nodes are the elements of the JSON template which is expressing the view.
+They can be objects or strings, in order to represent
+either an HTML tag (tag node), one of specific nodes of the API (logical node),
+or a raw text (raw node).
 
-### Tag node
+### Tag nodes
 
-This node will be rendered as html element,
+These nodes will be rendered as HTML elements,
 building their attributes and their children.
 
-### API node
+### Logical nodes
 
-This node will be rendered after processing
-the logical function that node is representing.
+The children of these nodes will be rendered after the engine have processed
+the logic defined by their types which can be conditional (if, switch),
+iterative (each, repeat), or inclusive (inlay, wrap).
 
-### Raw node
+### Raw nodes
 
-This node is a string that will be rendered as it is,
-after its molds were replaced with matching fillers property.
+These nodes are strings that will be rendered as they are,
+after their molds were replaced with matching fillers property.
 
 Filler
 ------
 
-A property of the ongine main function second argument, fillers.
-It will fill any matching mold in a raw node during rendering.
+Properties of the ongine function second argument (fillers).
+They will fill any matching mold in a raw node during rendering.
 
 Mold
 ----

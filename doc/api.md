@@ -44,17 +44,17 @@ and all previous conditions have returned false.
 
 ### Usage
 
-{"api" : "if", "in" : __conditions__}
+{"api" : "if", "in" : _conditions_}
 
-* conditions : Array | Object
+* _conditions_ : Array | Object
 
-#### __conditions__ structure
+#### _conditions_ structure
 
-([){("condition" : __condition__ | "default" : __enable__), "in" : __block__}(,...])
+([){("condition" : _condition_ | "default" : _enable_), "in" : _block_}(,...])
 
-* condition : String
-* enable : Boolean
-* block : Array | Object | String
+* _condition_ : String
+* _enable_ : Boolean
+* _block_ : Array | Object | String
 
 ### Example
 
@@ -112,18 +112,18 @@ and all previous cases have returned false.
 
 ### Usage
 
-{"api" : "switch", "expression" : __expression__, "in" : __cases__}
+{"api" : "switch", "expression" : _expression_, "in" : _cases_}
 
-* expression : String
-* cases : Array | Object
+* _expression_ : String
+* _cases_ : Array | Object
 
-#### __cases__ structure
+#### _cases_ structure
 
-([){("case" : __case__ | "default" : __enable__), "in" : __block__}(,...])
+([) {("case" : _case_ | "default" : _enable_), "in" : _block_} (,...])
 
-* case : String | Number | Boolean
-* enable : Boolean
-* block : Array | Object | String
+* _case_ : String | Number | Boolean
+* _enable_ : Boolean
+* _block_ : Array | Object | String
 
 ### Example
 
@@ -168,11 +168,11 @@ Its default value is `"item"`.
 
 ### Usage
 
-{"api" : "each", "array" : __property__, "in" : __block__(, "item" : __item__)}
+{"api" : "each", "array" : _property_, "in" : _block_(, "item" : _item_)}
 
-* property : String
-* item : String 
-* block : Array | Object | String
+* _property_ : String
+* _item_ : String 
+* _block_ : Array | Object | String
 
 ### Example
 
@@ -200,11 +200,11 @@ Useful only in few situations.
 
 ### Usage
 
-{"api" : "repeat", "number" : __number__, "in" : __block__(, "current" : __current__)}
+{"api" : "repeat", "number" : _number_, "in" : _block_(, "current" : _current_)}
 
-* number : Number
-* current : String
-* block : Array | Object | String
+* _number_ : Number
+* _current_ : String
+* _block_ : Array | Object | String
 
 Default value for current property is `"current"`.
 
@@ -231,9 +231,9 @@ unless this behaviour have been disabled setting custom options.
 
 ### Usage
 
-{"api" : "inlay", "name" : __filename__}
+{"api" : "inlay", "name" : _filename_}
 
-* filename : String
+* _filename_ : String
 
 ### Example
 

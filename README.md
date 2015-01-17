@@ -37,11 +37,14 @@ npm install ongine
 Usage
 -----
 
-ongine(__view__, __fillers__, __options__);
+ongine(_view_, _fillers_, _options_);
 
-* view : Object | Array | String
-* fillers : Object
-* options : Object 
+* _view_ : Object | Array | String
+* _fillers_ : Object
+* _options_ : Object 
+
+Examples
+--------
 
 ### Hello World
 
@@ -55,13 +58,13 @@ var html = render(
 	},
 	null,
 	{
-		'warp' : false,
+		'wrap' : false,
 		'doctype' : false
 	}
 );
 ```
 
-#### Rendered
+#### Output
 
 ```html
 <p id="hello">Hello World</p>
@@ -92,14 +95,14 @@ var fillers = {
 };
 
 var options = {
-	'wraps' : false,
+	'wrap' : false,
 	'pretty' : true
 }
 
 var html = render(view, fillers, options);
 ```
 
-#### Rendered
+#### Output
 
 ```html
 <!DOCTYPE HTML>
@@ -115,4 +118,52 @@ var html = render(view, fillers, options);
 		</p>
 	</body>
 </html>
+```
+
+### API sample
+
+```javascript
+var render = require('ongine');
+
+var view = [];
+view.push({
+	'api' : 'if',
+	'in' : {
+		'condition' : '{{foo}}',
+		'in' : '<p>fillers.foo returns true</p>'
+	}
+});
+view.push({
+	'api' : 'if',
+	'in' : [
+		{
+			'condition' : '{{bar}}',
+			'in' : '<p>fillers.bar returns true</p>'
+		},
+		{
+			'default' : true,
+			'in' : '<p>fillers.bar does not return true</p>'
+		}
+	]
+});
+
+var fillers = {
+	'foo' : true,
+	'bar' : false
+};
+
+var options = {
+	'wrap' : false,
+	'pretty' : true
+};
+
+var html = render(view, fillers, options);
+```
+
+#### Output
+
+```html
+<!DOCTYPE HTML>
+<p>fillers.foo returns true</p>
+<p> fillers.bar does not return true</p>
 ```
