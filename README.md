@@ -167,3 +167,5 @@ var html = render(view, fillers, options);
 <p>fillers.foo returns true</p>
 <p> fillers.bar does not return true</p>
 ```
+
+> [Documentation](https://github.com/qron/ongine/tree/master/doc) is available in GitHub repository.
