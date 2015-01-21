@@ -67,7 +67,7 @@ function inspectNode(node, fillers, options) {
 	if(node.api) return inspectApi(node, fillers, options);
 
 	// Node tree
-	if(node.in && !node.tag) return inspectNodeTree(node, fillers, options);
+	if(node.in) return inspectNodeTree(node, fillers, options);
 
 	return '';
 
