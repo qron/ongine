@@ -229,9 +229,10 @@ Inlay
 
 ### Usage
 
-{"api" : "inlay", "name" : _filename_}
+{"api" : "inlay", "name" : _filename_(, "raw" : _enable_)}
 
 * _filename_ : String
+* _enable_ : Boolean
 
 ### Description
 
@@ -241,6 +242,11 @@ at the place of the node itself.
 The `name` property defines the filename of the inlayed template.
 The full path and extension will be automatically added from options,
 unless this behaviour have been disabled setting custom options.
+
+The optional `raw` property allows to inlay a non-JSON file
+which will be inserted as raw node.
+Usually, a local option will have to be set
+in order to define the extension of the raw inlay.
 
 ### Example
 

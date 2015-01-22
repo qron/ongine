@@ -18,7 +18,10 @@ function renderTemplate(template, fillers, options) {
 	if(options.doctype) html += options.doctype;
 
 	// Consider raws as template filename
-	if(isRaw(template)) template = getTemplate(template.toString(), 'views', options);
+	if(isRaw(template)) {
+		template = getTemplate(template.toString(), 'views', options);
+		template = JSON.parse(template);
+	}
 
 	if(areChildren(template)) template = {'in' : template};
 
@@ -29,6 +32,7 @@ function renderTemplate(template, fillers, options) {
 		if(!options.wrap) options.wrap = options.defaultWrap;
 
 			var wrap = getTemplate(options.wrap, 'wraps', options);
+			wrap = JSON.parse(wrap);
 
 			// Start recursive nodes inspection from wrap
 			html += inspectNode(wrap, fillers, options);
@@ -136,6 +140,13 @@ function inspectApi(node, fillers, options) {
 
 		case 'inlay' :
 			var template = getTemplate(node.name, 'inlays', options);
+			if(node.raw) {
+				// Remove last EOL
+				var lastEOL = /\n$/;
+				template = template.replace(lastEOL, '');
+				return handleRaw(template, fillers, options);
+			}
+			template = JSON.parse(template);
 			return inspectNode(template, fillers, options);
 			break;
 
