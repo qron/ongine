@@ -103,7 +103,7 @@ Options list
 
 #### Description
 
-Define document doctype.
+Defines document doctype.
 
 ### Alias
 
@@ -119,14 +119,14 @@ Define document doctype.
 
 #### Description
 
-Define molds delimiter(s).
+Defines molds delimiter(s).
 
 It can be defined as string or array, as well.
 Array must contain 2 string items at index 0 (mold start) and 1 (mold end).
 
 #### String aliases
 
-If the alias is a string, the filler name will prepended by this string
+If the alias is a string, the filler name will be prepended by this string
 (alias + fillerName).
 
 If `'#'` is assigned to `options.alias`,
@@ -155,7 +155,7 @@ If `['{{', '}}']` is assigned to `options.alias`,
 
 #### Description
 
-Define engine template files extension.
+Defines engine template files extension.
 
 The dot (.) is automatically prepended to the extension.
 
@@ -177,7 +177,7 @@ in order to verify condition : `(!options.extension) === true`.
 
 #### Description
 
-Define the views directory path of application.
+Defines the views directory path of application.
 
 ### Inlays
 
@@ -193,7 +193,7 @@ Define the views directory path of application.
 
 #### Description
 
-Define the inlays directory path of application.
+Defines the inlays directory path of application.
 
 If it is not defined, the directory location
 will be considered to be under views directory.
@@ -212,7 +212,7 @@ will be considered to be under views directory.
 
 #### Description
 
-Define the wraps directory path of application.
+Defines the wraps directory path of application.
 
 If it is not defined, the directory location
 will be considered to be under views directory.
@@ -231,7 +231,7 @@ will be considered to be under views directory.
 
 #### Description
 
-Define the default wrap filename if `options.wrap` is omitted.
+Defines the default wrap filename if `options.wrap` is omitted.
 
 ### Wrap
 
@@ -247,7 +247,7 @@ Define the default wrap filename if `options.wrap` is omitted.
 
 #### Description
 
-Define the wrap filename which will enwrap the rendered template.
+Defines the wrap filename which will enwrap the rendered template.
 
 To disable wrapping, assign `false` to `options.wrap`,
 in order to verify condition : `options.wrap === false`
@@ -266,7 +266,7 @@ in order to verify condition : `options.wrap === false`
 
 #### Description
 
-Enable output pretty mode. Line breaks and indentation
+Enables output pretty mode. Line breaks and indentation
 will be added automatically during rendering.
 
 Raw text will not be broken down, it will be indented as a single line.
@@ -287,7 +287,7 @@ Somewhat buggy in browser when inspecting the source code.
 
 #### Description
 
-Define indentation pattern when pretty mode is enabled.
+Defines indentation pattern when pretty mode is enabled.
 
 ### Out
 
@@ -303,7 +303,7 @@ Define indentation pattern when pretty mode is enabled.
 
 #### Description
 
-Define the engine return type.
+Defines the engine return type.
 
 #### String mode
 
@@ -331,24 +331,24 @@ You should not touch to these options unless you know what you are doing.
 
 #### Description
 
-Define HTML5 voids elements list (childless tags).
+Defines HTML5 voids elements list (childless tags).
 
 ### Depth
 
 #### Description
 
-Define the current depth level during node rendering to indent properly.
+Defines the current depth level during node rendering to indent properly.
 
 ### Wrapped
 
 #### Description
 
-Contain the wrapped view which will be embedded inside wrap.
+Contains the wrapped view which will be embedded inside wrap.
 
 ### Inlayed
 
 #### Description
 
-Contain a list of the inlayed files
+Contains a list of the inlayed files
 which will be transmitted only to descendant nodes.
 This list prevents infinite inclusions.
