@@ -1,6 +1,6 @@
 {
   "name": "ongine",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "JSON-based template engine.",
   "main": "index.js",
   "directories": {
