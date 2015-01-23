@@ -1,6 +1,14 @@
 Changelog
 =========
 
+v0.0.3 (2015-01-23)
+-------------------
+
+* Add support of raw-only inlays
+* Fix number as propety name of fillers
+* Fix selector cursor position
+* Prevent infinite inclusions
+
 v0.0.2 (2015-01-17)
 -------------------
 
