@@ -344,3 +344,11 @@ Define the current depth level during node rendering to indent properly.
 #### Description
 
 Contain the wrapped view which will be embedded inside wrap.
+
+### Inlayed
+
+#### Description
+
+Contain a list of the inlayed files
+which will be transmitted only to descendant nodes.
+This list prevents infinite inclusions.

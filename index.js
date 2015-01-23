@@ -139,15 +139,31 @@ function inspectApi(node, fillers, options) {
 			break;
 
 		case 'inlay' :
+			// Prevent infinite inclusion
+			if(options.inlayed.indexOf(node.name) !== -1) return '';
+
+			// Create non-reference options object for descendant nodes
+			var subOptions = {};
+			Object.keys(options).forEach(function(key) {
+				subOptions[key] = options[key];
+			});
+			var inlayed = [];
+			inlayed.concat(options.inlayed);
+			inlayed.push(node.name);
+			subOptions.inlayed = inlayed;
+
 			var template = getTemplate(node.name, 'inlays', options);
+			
+			// Handle raw inclusions
 			if(node.raw) {
 				// Remove last EOL
 				var lastEOL = /\n$/;
 				template = template.replace(lastEOL, '');
 				return handleRaw(template, fillers, options);
 			}
+
 			template = JSON.parse(template);
-			return inspectNode(template, fillers, options);
+			return inspectNode(template, fillers, subOptions);
 			break;
 
 		case 'wrap' :
